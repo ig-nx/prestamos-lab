@@ -1,0 +1,66 @@
+{% load static %} 
+<!DOCTYPE html> 
+<html lang='es'> 
+<head> 
+    <meta charset='UTF-8'> 
+    <title>Sistema de préstamo de notebooks</title> 
+    <meta name='viewport' content='width=device-width, initial-scale=1'> 
+ 
+    <link 
+href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' 
+rel='stylesheet'> 
+    <link rel='stylesheet' href='{% static "inventario/css/estilos.css" %}'> 
+</head> 
+<body class='bg-light'> 
+ 
+        <nav class='navbar navbar-expand-lg navbar-dark bg-primary'> 
+        <div class='container'> 
+            <a class='navbar-brand' href='{% url "notebook_list" %}'>Préstamos Lab</a> 
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#mainNavbar' aria-controls='mainNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+ 
+            <div class='collapse navbar-collapse' id='mainNavbar'>
+                <d-iv class='navbar-nav'> 
+                    <a class='nav-link' href='{% url "notebook_list" %}'>Inicio</a> 
+                    <a class='nav-link' href='{% url "notebook_create" %}'>Nuevo notebook</a>
+                    <a class='nav-link' href='{% url "reporte_interno" %}'>Reporte interno</a> 
+                    <a class='nav-link' href='/admin/'>Admin</a> 
+                </d-iv> 
+ 
+                <div class='navbar-nav ms-auto'> 
+                    {% if user.is_authenticated %} 
+                        <span class='navbar-text me-2'>Hola, {{ user.username }}!</span> 
+                        <form method='post' action='{% url "logout" %}' class='d-inline'> 
+                            {% csrf_token %} 
+                            <button type='submit' class='btn btn-link nav-link'>Logout</button>
+                        </form>
+                    {% else %} 
+                        <a class='nav-link' href='{% url "login" %}'>Login</a> 
+                    {% endif %}
+                </div>
+            </div>
+        </div> 
+    </nav>  
+ 
+    <main class='container py-4'> 
+        {% if messages %} 
+            {% for message in messages %} 
+                <div class='alert alert-success alert-dismissible fade show' 
+role='alert'> 
+                    {{ message }} 
+                    <button type='button' class='btn-close' data-bs
+dismiss='alert'></button> 
+                </div> 
+            {% endfor %} 
+        {% endif %} 
+ 
+        {% block contenido %} 
+        {% endblock %} 
+    </main> 
+ 
+    <script 
+src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'>
+</script> 
+</body> 
+</html>
