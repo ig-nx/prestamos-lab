@@ -2,17 +2,28 @@
 
 Aplicación web hecha con **Django** para registrar y administrar un inventario simple de notebooks (equipos) y su disponibilidad.
 
+## 🌐 Demo en producción
+
+Accede a la aplicación aquí:
+👉 https://prestamos-lab.onrender.com/
+
+---
+
 ## Funcionalidades
 
-- Listado de notebooks con estado y disponibilidad.
-- Crear / editar / eliminar notebooks.
-- Autenticación (login / logout) y panel de administración (`/admin/`).
-- **Reporte interno** con métricas (total, disponibles, en mantención) protegido por **grupo + permiso**.
+* Listado de notebooks con estado y disponibilidad.
+* Crear / editar / eliminar notebooks.
+* Autenticación (login / logout) y panel de administración (`/admin/`).
+* **Reporte interno** con métricas (total, disponibles, en mantención) protegido por **grupo + permiso**.
+
+---
 
 ## Requisitos
 
-- Python 3.13+
-- Django 6.x
+* Python 3.13+
+* Django 6.x
+
+---
 
 ## Instalación y ejecución
 
@@ -22,8 +33,8 @@ python -m venv .venv
 
 Activar entorno virtual:
 
-- Windows (PowerShell): `.venv\Scripts\Activate.ps1`
-- macOS/Linux: `source .venv/bin/activate`
+* Windows (PowerShell): `.venv\Scripts\Activate.ps1`
+* macOS/Linux: `source .venv/bin/activate`
 
 Instalar dependencias y levantar el proyecto:
 
@@ -36,13 +47,16 @@ python manage.py runserver
 
 Abrir:
 
-- App: `http://127.0.0.1:8000/`
-- Admin: `http://127.0.0.1:8000/admin/`
-- Login: `http://127.0.0.1:8000/cuentas/login/`
+* App: http://127.0.0.1:8000/
+* Admin: http://127.0.0.1:8000/admin/
+* Login: http://127.0.0.1:8000/cuentas/login/
+
+---
 
 ## Acceso al “Reporte interno”
 
-La ruta del reporte es: `http://127.0.0.1:8000/reporte-interno/`
+La ruta del reporte es:
+http://127.0.0.1:8000/reporte-interno/
 
 Para poder verla, el usuario debe:
 
@@ -51,16 +65,28 @@ Para poder verla, el usuario debe:
 
 Puedes configurarlo desde el panel `/admin/` (Groups/Usuarios → permisos).
 
-## Captura de pantalla
+---
 
-Guarda una imagen en `docs/captura.png` y luego descomenta esta línea:
+## Capturas de pantalla
 
-<!-- ![Captura de pantalla](docs/captura.png) -->
+> Las imágenes están dentro de la carpeta `docs/`
 
-Más detalles en `docs/README.md`.
+### Inicio
+
+<img src="docs/inicio.jpg" width="500">
+
+### Login
+
+<img src="docs/login.jpg" width="500">
+
+### Formulario
+
+<img src="docs/formulario.jpg" width="500">
+
+---
 
 ## Notas
 
-- Base de datos por defecto: SQLite.
-- Configuración actual pensada para desarrollo (por ejemplo `DEBUG=True`).
-
+* Base de datos por defecto: SQLite.
+* Configuración actual pensada para desarrollo (por ejemplo `DEBUG=True`).
+* Para más documentación revisa: `docs/README.md`
