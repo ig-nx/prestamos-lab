@@ -2,10 +2,10 @@
 
 Aplicación web hecha con **Django** para registrar y administrar un inventario simple de notebooks (equipos) y su disponibilidad.
 
-## 🌐 Demo en producción
+## Demo en producción
 
 Accede a la aplicación aquí:
-👉 https://prestamos-lab.onrender.com/
+https://prestamos-lab.onrender.com/
 
 ---
 
@@ -14,7 +14,7 @@ Accede a la aplicación aquí:
 * Listado de notebooks con estado y disponibilidad.
 * Crear / editar / eliminar notebooks.
 * Autenticación (login / logout) y panel de administración (`/admin/`).
-* **Reporte interno** con métricas (total, disponibles, en mantención) protegido por **grupo + permiso**.
+* Reporte interno con métricas (total, disponibles, en mantención) protegido por grupo y permiso.
 
 ---
 
@@ -67,9 +67,17 @@ Puedes configurarlo desde el panel `/admin/` (Groups/Usuarios → permisos).
 
 ---
 
+## Base de datos
+
+El proyecto utiliza **PostgreSQL en la nube mediante Neon** como base de datos en el entorno de producción.
+
+Para desarrollo local, se utiliza SQLite por defecto.
+
+---
+
 ## Capturas de pantalla
 
-> Las imágenes están dentro de la carpeta `docs/`
+Las imágenes están dentro de la carpeta `docs/`.
 
 ### Inicio
 
@@ -87,6 +95,7 @@ Puedes configurarlo desde el panel `/admin/` (Groups/Usuarios → permisos).
 
 ## Notas
 
-* Base de datos por defecto: SQLite.
+* Base de datos local: SQLite.
+* Base de datos en producción: PostgreSQL (Neon).
 * Configuración actual pensada para desarrollo (por ejemplo `DEBUG=True`).
 * Para más documentación revisa: `docs/README.md`
