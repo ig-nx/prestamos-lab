@@ -7,6 +7,8 @@
 3. En `README.md`, descomenta la línea:
 
 ```md
-![Captura de pantalla](docs/captura.png)
+![Formulario](formulario.jpg)
+![Inicio](inicio.jpg)
+![Login](login.jpg)
 ```
 
